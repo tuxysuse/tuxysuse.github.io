@@ -46,6 +46,11 @@ self.addEventListener("fetch", event => {
 self.addEventListener('push', function(event) {
     if (event.data) {
       console.log('This push event has data: ', event.data.text());
+      const title = 'Simple Title';
+    const options = {
+      body: 'Simple piece of body text.\nSecond line of body text :)'
+    };
+    registration.showNotification(title, options);
     } else {
       console.log('This push event has no data.');
     }
